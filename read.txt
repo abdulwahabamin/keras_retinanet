@@ -1,0 +1,15 @@
+retinanet-train --savedir directory/model csv annotations/labels.csv annotations/classes.csv --weights directory/snapshots/resnet50.h5
+NOTE: log.csv file must be in --savedir path for it to be detected for resuming training.
+retinanet-train --savedir /home/cvlab/Ted/retinanet --weights /home/cvlab/Ted/retinanet/snapshots/resnet50_csv_06.h5 --compute-val-loss --image-min-side 400 --batch-size 1 --image-max-side 640 csv labels.csv classes.csv --val-annotations val.csv
+
+retinanet-train --backbone resnet101 --savedir /home/cvlab/Ted/models/results/retinanet/icra/train --compute-val-loss --image-min-side 400 --batch-size 1 --image-max-side 640 csv retinanet-train.csv classes.csv --val-annotations retinanet-val.csv
+
+retinanet-train --backbone resnet101 --snapshot /mnt/8A2A8B2E2A8B15FB/Ted/models/results/retinanet/train/snapshots/resnet101_csv_61.h5 --savedir /home/cvlab/Ted/models/results/retinanet/train_attention --compute-val-loss --image-min-side 400 --batch-size 1 --image-max-side 640 csv retinanet-train.csv classes.csv --val-annotations retinanet-val.csv
+
+retinanet-train --backbone resnet101 --savedir ./thesis --multi-gpu 4 --multi-gpu-force --multiprocessing --workers 20 --image-min-side 400 --batch-size 8 --image-max-side 640 csv retina.csv classes.csv
+
+-Windows
+retinanet-train --savedir D:\\Ted\\models\\results\\retinanet\\icra --compute-val-loss --image-min-side 400 --batch-size 1 --image-max-side 640 csv retinanet-train.csv classes.csv --val-annotations retinanet-val.csv
+
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | \
+  sudo tee /etc/apt/sources.list.d/nvidia-docker.list
