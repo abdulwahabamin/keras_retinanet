@@ -12,6 +12,7 @@ import cv2
 import os
 import numpy as np
 import time
+from tqdm import tqdm
 
 # set tf backend to allow memory to grow, instead of claiming everything
 import tensorflow as tf
@@ -62,7 +63,7 @@ for folder in folders:
     txt_file = os.path.join(base_path,folder,'ImageSets/Main',split + '.txt')
     f = open(txt_file,'r')
     lines = f.readlines()
-    for line in lines:
+    for line in tqdm(lines):
         img_name = line.strip()
         img = os.path.join(base_path,folder,'JPEGImages',img_name + '.jpg')
         print('testing image ' + img + '\n')
