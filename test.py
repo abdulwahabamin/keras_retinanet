@@ -66,7 +66,7 @@ for folder in folders:
     for line in tqdm(lines):
         img_name = line.strip()
         img = os.path.join(base_path,folder,'JPEGImages',img_name + '.jpg')
-        print('testing image ' + img + '\n')
+        # print('testing image ' + img + '\n')
         try:
             image = cv2.imread(img)
         except:
