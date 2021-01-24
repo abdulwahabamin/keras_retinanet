@@ -89,6 +89,7 @@ for folder in folders:
             # correct for image scale
             boxes /= scale
             annot = []
+            b = list()
             # visualize detections
             for box, score, label in zip(boxes[0], scores[0], labels[0]):
                 # scores are sorted so we can break
@@ -110,7 +111,8 @@ for folder in folders:
             for annotation in annot:
                 f.write(annotation + '\n')
             f.close()
-            draw_caption(draw, b, caption)
+            if b:
+                draw_caption(draw, b, caption)
 
         cv2.imwrite(os.path.join(savedir, folder, img_name + '.jpg'), draw)
 #         plt.figure(figsize=(15, 15))
