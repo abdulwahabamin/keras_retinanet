@@ -31,9 +31,9 @@ keras.backend.tensorflow_backend.set_session(get_session())
 # adjust this to point to your downloaded/trained model
 # models can be downloaded here: https://github.com/fizyr/keras-retinanet/releases
 # model_path = os.path.join('..', 'snapshots', 'resnet50_coco_best_v2.1.0.h5')
-model_path = 'thesis_final.h5'
+model_path = 'resent50_log.h5'
 # load retinanet model
-model = models.load_model(model_path, backbone_name='resnet101')
+model = models.load_model(model_path, backbone_name='resnet50')
 
 # if the model is not converted to an inference model, use the line below
 # see: https://github.com/fizyr/keras-retinanet#converting-a-training-model-to-inference-model
@@ -54,7 +54,7 @@ labels_to_names = {0: 'plastic_bag', 1: 'plastic_wrapper', 2: 'plastic_bottle', 
 base_path = '/Ted/datasets/VOC_Test_'
 folders = ['VOC_Test_Easy', 'VOC_Test_Hard']
 split = 'test'  # can be train, train_val or test
-savedir = '/Ted/results/retinanet101'
+savedir = '/Ted/results/retinanet50_log'
 
 if not os.path.exists(savedir):
     os.mkdir(savedir)
