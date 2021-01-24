@@ -31,7 +31,7 @@ keras.backend.tensorflow_backend.set_session(get_session())
 # adjust this to point to your downloaded/trained model
 # models can be downloaded here: https://github.com/fizyr/keras-retinanet/releases
 # model_path = os.path.join('..', 'snapshots', 'resnet50_coco_best_v2.1.0.h5')
-model_path = 'resent50_log.h5'
+model_path = 'resnet50_log.h5'
 # load retinanet model
 model = models.load_model(model_path, backbone_name='resnet50')
 
